@@ -1,0 +1,279 @@
+.goal-content {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-end; /* Align content at the bottom */
+  align-items: left; /* Center elements horizontally */
+  width: 100%; /* Optional: Set width to fill the popup */
+}
+
+#goalProgressBar {
+    /*margin-top: 30px;*/
+    height: 10px;  /* Adjust height as needed */
+    /*background-color: #81a6ff;*/ /* Background color for the entire bar */
+    background-color: #e0e0e0;
+    border-radius: 5px;  /* Rounded corners */
+    overflow: hidden;  /* Hide overflow for inner progress element */
+    direction: ltr;
+    /*background-image: linear-gradient(to right, #84e4d3 0%, #FFF 100%);*/
+}
+
+#goalProgressBar::before {
+  content: " ";  /* Empty content to avoid affecting layout */
+  height: 100%;  /* Fills the entire height of the outer bar */
+  background-color: #007bff; /* Color for the progress portion */
+  transition: width 0.5s ease-in-out; /* Add smooth transition for animation */
+  display: block;  /* Makes the element behave like a block-level element */
+  direction: ltr;
+  z-index: 1;
+}
+
+#goalProgressBar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 5px; /* Position on the right side */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white; /* Adjust color for visibility */
+  font-size: 0.8em; /* Adjust font size */
+  /*content: attr(data-percentage) "%"; *//* Use data attribute for percentage */
+}
+
+#progressBarWrapper {
+    margin-top: 10px;
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+#notePopup {
+    text-align: center;
+}
+#notepad{
+    width: 256px;
+    height: 128px;
+}
+
+.popup-container {
+    width: 320px;
+    height: 225px;
+    margin: 0px;
+    padding: 0px;
+    /*background-color: #DDE6ED;*/
+}
+
+body {
+    width: 320px; /*308px when taking margin into account*/
+    height: 230px; /*198px w/o margin*/
+    font-family:Arial, sans-serif;
+    /* background-color: #f8f8f8; */
+    /*background-color: #e8fbe9;*/
+    background-color: #9DB2BF;
+    padding: 0px;
+    margin: 6px;
+}
+.popup-wrapper {
+    width: 270px;
+    height: 176px;
+     font-family: Arial, sans-serif; 
+     background-color: #DDE6ED;
+     margin: 10px; /* Keep the margin on the wrapper */
+     padding: 15px; 
+     border-radius: 5px; 
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+}
+.goal-list li{
+    margin-bottom: 4px;
+    border-radius: 4px; 
+}
+
+button { 
+    /*background-color: #e0e0e0; */
+    background-color: #526D82;
+    border: none; 
+    color: white;
+    padding: 2px 5px; 
+    border-radius: 3px;
+} 
+
+url {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 1rem 0;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin: 2px;
+}
+
+li {
+  padding: 5px;
+}
+li:nth-child(odd) {
+  background: #80808030;
+}
+li:nth-child(even) {
+  background: #ffffff;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+.preferences-popup {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+}
+
+.preferences-popup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.preferences-popup input[type="text"],
+.preferences-popup select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.preferences-popup button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.preferences-popup button:hover {
+  background-color: #0069cc;
+}
+
+#pomodoroButton {
+  background-color: #526D82;
+  color: white;
+  border: none;
+  padding: 2px 5px; 
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#pomodoroButton:hover {
+  background-color: #637786; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.popup-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.popup-wrapper {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+
+
+button:hover {
+  background-color: #45a049;
+}
+
+.popup-wrapper > div {
+  margin-bottom: 15px;
+}
+
+.preferences-popup {
+  display: flex;
+  flex-direction: column;
+}
+
+.preferences-popup label,
+.preferences-popup select,
+.preferences-popup input[type="number"] {
+  margin-bottom: 10px;
+}
+
+.preferences-popup select,
+.preferences-popup input[type="number"] {
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.preferences-popup button {
+  width: 100%;
+}
+
+/* Pomodoro Timer Section */
+#pomodoroSection {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#pomodoroSection h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#pomodoroSection .preferences-popup label,
+#pomodoroSection .preferences-popup select,
+#pomodoroSection .preferences-popup input[type="number"] {
+  margin-bottom: 10px;
+}
+
+#pomodoroSection .preferences-popup select,
+#pomodoroSection .preferences-popup input[type="number"] {
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#pomodoroSection .preferences-popup button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#pomodoroTimerDisplay {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+

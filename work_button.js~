@@ -1,0 +1,4 @@
+const workButton = document.getElementById('work');
+workButton.addEventListener('click', () => {
+    window.location.href = "https://duke.canvas.edu/";
+});

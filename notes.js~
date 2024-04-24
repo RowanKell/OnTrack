@@ -1,0 +1,25 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const addNoteButton = document.getElementById('addNoteButton');
+  const notePopup = document.getElementById('notePopup');
+  const notepad = document.getElementById('notepad');
+  const saveButton = document.getElementById('saveButton');
+
+  // Show the note popup
+  addNoteButton.addEventListener('click', function() {
+    notePopup.style.display = 'block'; 
+  });
+
+  // Load existing note
+  chrome.storage.sync.get(['note'], function(data) {
+    notepad.value = data.note || '';
+  });
+
+  // Save note
+  saveButton.addEventListener('click', function() {
+    chrome.storage.sync.set({ note: notepad.value }, function() {
+      console.log('Note saved!');
+      notePopup.style.display = 'none'; // Close the note popup after saving
+    });
+  });
+});
+

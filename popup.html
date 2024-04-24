@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body id="body">
+    <div class="popup-container">
+      <div class="popup-wrapper" id="popupWrapper">
+	<div id ="defaultPopup">
+	  <h1>OnTrack!</h1>
+	  <button id="work">Go to work</button>
+	  <script src="work_button.js"></script>
+	  <button id="openGoalButton">Open Goals</button>
+	  <button id="addNoteButton">Open Notes</button>
+	  <button id="preferencesButton">Open Preferences</button>
+	  <button id="pomodoroButton">Pomodoro Timer</button>
+	  <div class="goal-content">
+	    <div id="progressBarWrapper">
+	      <div id="goalProgressBar"></div>
+	    <span id="goalPercentage"></span>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Notes Popup -->
+	<div id="notePopup" style="display: none;">
+	  <h2>Notes</h2>
+	  <textarea id="notepad" placeholder="Write your note here..."></textarea>
+	  <button id="saveNoteButton">Save Note</button>
+	</div>
+	
+	<!-- Goals Popup-->
+	<div id="goalPopup" style="display: none;">
+	  <h2>Goals</h2>
+	  <ul class="goal-list">
+	    <li><input type="checkbox" id="goal1_check"> <input id="goal1" type="text"></li>
+	    <li><input type="checkbox" id="goal2_check"> <input id="goal2" type="text"></li>
+	    <li><input type="checkbox" id="goal3_check"> <input id="goal3" type="text"></li>
+	    <li><input type="checkbox" id="goal4_check"> <input id="goal4" type="text"></li>
+	    <!-- <textarea id="goal1" placeholder="I want to..."></textarea>-->
+	    <button id="saveGoalButton">Save Goals</button>
+	  </ul>
+	</div>
+	<div class="preferences-popup" id="preferencesPopup" style="display: none;">
+	  <h1>Preferences</h1>
+  
+	  <div class="preference-row">
+	    <label for="workWebsite">Work Website:</label>
+	    <input type="text" id="workWebsite" value="yourwebsite.com" disabled> </div>
+	  <label for="timerLength">Timer Length:</label>
+	  <select id="timerLength" name="timerLength">
+	    <option value="25">25 minutes</option>
+	    <option value="50">50 minutes</option>
+	    <option value="90">90 minutes</option>
+	  </select>
+	  
+	  <label for="distractions">Allow Distractions After Goals:</label>
+	  <select id="distractions" name="distractions">
+	    <option value="yes">Yes</option>
+	    <option value="no">No</option>
+	  </select>
+	  
+	  <label for="colorScheme">Color Scheme:</label>
+	  <select id="colorScheme" name="colorScheme">
+	    <option value="default">Default</option>
+	    <option value="light">Light</option>
+	    <option value="dark">Dark</option>
+	  </select>
+	  
+	  <button id="editButton">Edit Preferences</button>
+	  <button id="preferencesSubmit">Save Preferences</button>
+	</div>
+	
+	<!-- Pomodoro Timer Section -->
+	<div id="pomodoroSection" style="display: none;">
+	  <h2>Pomodoro Timer Settings</h2>
+	  <div class="preferences-popup">
+	    <label for="studyTime">Study Time (seconds):</label>
+	    <input type="number" id="studyTime" placeholder="Enter study time">
+	
+	    <label for="breakTime">Break Time (seconds):</label>
+	    <input type="number" id="breakTime" placeholder="Enter break time">
+	
+	    <label for="totalIterations">Total Iterations:</label>
+	    <input type="number" id="totalIterations" placeholder="Enter total iterations">
+	
+	    <button id="startPomodoro">Start Pomodoro Timer</button>
+	    <p id="pomodoroTimerDisplay">Pomodoro Timer</p>
+	  </div>
+	</div>
+	
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
