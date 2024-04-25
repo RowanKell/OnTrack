@@ -1,3 +1,5 @@
+For firefox extension, clone firefox branch
+
 To use the extension, you must have google chrome installed and you must have the "dev-extension" folder downloaded from our gitlab.
 
 Open google chrome and navigate to the browser's settings page.
