@@ -5,7 +5,7 @@
     "description": "Reminds you to get back to work when visiting Instagram.",
     "permissions": ["tabs", "activeTab", "storage", "scripting"],
     "background": {
-      "service_worker": "background.js"
+      "scripts": ["background.js"]
     },
     "action": {
       "default_popup": "popup.html",
